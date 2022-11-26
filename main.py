@@ -5,6 +5,10 @@ import pyperclip
 
 
 def start():
+    """
+    main funk
+    :return:
+    """
     namespace = parse()
     data = start_transform(namespace)
     result = ""
@@ -32,6 +36,10 @@ def start():
 
 
 def parse() -> argparse.Namespace:
+    """
+    parse args from console
+    :return: argparse.Namespace
+    """
     parser = argparse.ArgumentParser(description='Videos to images')
 
     parser.add_argument('-n', '--nameCodestyle', type=str,
@@ -50,6 +58,11 @@ def parse() -> argparse.Namespace:
 
 
 def start_transform(namespace: argparse.Namespace) -> list:
+    """
+    clears the data from garbage and leads to a convenient format
+    :param namespace: argparse.Namespace
+    :return: list
+    """
     data = str(namespace.string)
     data = data.replace("-", " ")
     data = data.replace(",", " ")
